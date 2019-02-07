@@ -35,3 +35,6 @@
 
 # Ignore JetBrains' personal files
 .idea
+
+# Ignore NodeJS packages
+node_modules/
