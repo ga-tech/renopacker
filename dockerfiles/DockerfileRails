@@ -1,0 +1,18 @@
+FROM ruby:2.5.3-alpine
+ENV LANG C.UTF-8
+
+RUN apk add --update --no-cache \
+    gmp-dev \
+    libxslt-dev \
+    libxml2-dev \
+    sqlite-dev
+WORKDIR /myapp
+
+ADD Gemfile /myapp/Gemfile
+ADD Gemfile.lock /myapp/Gemfile.lock
+#RUN bundle config build.nokogiri --use-system-libraries \
+#  && bundle install
+
+COPY . /myapp
+
+EXPOSE 3000
