@@ -11,7 +11,8 @@ var webpack = require('webpack');
 module.exports = {
   context: src,
   entry: {
-    "sample": "./app/assets/javascripts/entrypoints/sample.ts"
+    "bundlejs": "./app/assets/javascripts/entrypoints/sandbox.ts",
+    "bundlecss": "./app/assets/stylesheets/sandbox.scss"
   },
   output: {
     path: dist,
