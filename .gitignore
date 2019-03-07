@@ -25,6 +25,7 @@
 /yarn-error.log
 
 /public/assets
+/public/packs
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
@@ -38,3 +39,4 @@
 
 # Ignore NodeJS packages
 node_modules/
+.cache-loader/

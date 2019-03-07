@@ -2,6 +2,34 @@
   "name": "renopacker",
   "author": "tomnack93",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --progress --config webpack/development.config.js",
+    "build:dev": "webpack --mode=development --progress --config webpack/development.config.js",
+    "build:prod": "webpack --mode=production --progress --config webpack/production.config.js",
+    "test": "jest",
+    "stylelint": "stylelint '**/*.scss'",
+    "stylelint:fix": "stylelint --fix '**/*.scss'",
+    "tslint": "tslint -c tslint.json 'app/assets/javascripts/**/*.ts{,x}'",
+    "tslint:fix": "tslint -c tslint.json --fix 'app/assets/javascripts/**/*.ts{,x}'"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": ".test.tsx?$",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/vendor/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.8.1",
@@ -11,6 +39,7 @@
     "@types/jest": "^24.0.0",
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",
+    "cache-loader": "^2.0.1",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "jest": "^24.1.0",
     "mini-css-extract-plugin": "^0.5.0",
@@ -25,5 +54,10 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.2.1"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "> 1% in JP"
+  ]
 }
