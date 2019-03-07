@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Renopacker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_bundle_tag 'bundlecss'%>
+    <%= javascript_bundle_tag 'bundlejs'%>
+  </head>
+
+  <body>
+    <%= yield %>
+    <p class="text">Hello, World</p>
+  </body>
+</html>
