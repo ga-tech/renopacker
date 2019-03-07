@@ -2,17 +2,22 @@ FROM ruby:2.5.3-alpine
 ENV LANG C.UTF-8
 
 RUN apk add --update --no-cache \
+    build-base \
     gmp-dev \
     libxslt-dev \
     libxml2-dev \
-    sqlite-dev
+    sqlite-dev \
+    mariadb-dev \
+    tzdata
 WORKDIR /myapp
 
 ADD Gemfile /myapp/Gemfile
 ADD Gemfile.lock /myapp/Gemfile.lock
-#RUN bundle config build.nokogiri --use-system-libraries \
-#  && bundle install
+RUN bundle config build.nokogiri --use-system-libraries \
+ && bundle install
 
 COPY . /myapp
+
+CMD ["/bin/sh", "-c", "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"]
 
 EXPOSE 3000

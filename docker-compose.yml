@@ -8,5 +8,22 @@ services:
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
     volumes:
       - .:/myapp
+    env_file:
+      - ./env/development/app.env
     ports:
       - 3000:3000
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
+    env_file:
+      - ./env/development/db.env
+
+volumes:
+  db-data:
+    driver: local
