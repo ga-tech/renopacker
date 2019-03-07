@@ -1,0 +1,23 @@
+FROM node:10.15.0-alpine
+
+WORKDIR /myapp
+
+ENV TZ Asia/Tokyo
+RUN apk add --no-cache tzdata \
+ && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+ && echo $TZ > /etc/timezone
+
+COPY package.json yarn.lock /myapp/
+RUN yarn install
+
+COPY tsconfig.json \
+     tslint.json \
+     postcss.config.js \
+     stylelint.config.js \
+     /myapp/
+COPY ./webpack /myapp/webpack
+COPY ./app/assets /myapp/app/assets
+
+EXPOSE 3002
+
+CMD ["yarn", "build"]

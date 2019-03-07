@@ -15,6 +15,20 @@ services:
     depends_on:
       - db
 
+  proxy:
+    build:
+      context: .
+      dockerfile: dockerfiles/DockerfileWebpack
+    command: yarn start
+    volumes:
+      - .:/myapp
+    env_file:
+      - ./env/development/app.env
+    depends_on:
+      - web
+    ports:
+      - 3002:3002
+
   db:
     image: mysql:5.7
     ports:
