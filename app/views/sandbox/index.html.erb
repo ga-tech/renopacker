@@ -5,12 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_bundle_tag 'bundlecss'%>
-    <%= javascript_bundle_tag 'bundlejs'%>
+    <%= stylesheet_bundle_tag 'bundlecss' %>
+    <%= javascript_bundle_tag 'bundlejs' %>
   </head>
 
   <body>
     <%= yield %>
+    <%= image_bundle_tag 'logo.svg', width: "100%" %>
     <p class="text">Hello, World</p>
   </body>
 </html>
