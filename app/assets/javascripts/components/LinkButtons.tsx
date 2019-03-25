@@ -23,7 +23,8 @@ const styles = {
   },
   label: {
     fontSize: 18,
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
+    textTransform: 'none'
   }
 };
 
