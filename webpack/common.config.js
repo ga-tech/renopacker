@@ -14,7 +14,8 @@ module.exports = {
   entry: {
     "bundlejs": "./app/assets/javascripts/entrypoints/sandbox.ts",
     "bundlecss": "./app/assets/stylesheets/sandbox.scss",
-    "images": glob.sync("./app/assets/images/**/*")
+    "images": glob.sync("./app/assets/images/**/*"),
+    "linkButtons": "./app/assets/javascripts/entrypoints/linkButtons",
   },
   output: {
     path: dist,
