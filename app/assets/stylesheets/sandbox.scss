@@ -1,5 +1,26 @@
-$renosy-green: #25adb4 !default;
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #24b1b4 0%,#339fb9 33%,#438dbc 66%,#5674af 100%);
+}
 
-.text {
-    color: $renosy-green;
+.container {
+    vertical-align: middle;
+}
+
+.logo {
+    width: 800px;
+    margin: 40px 50px 20px;
+}
+
+.content {
+    background: white;
+    width: 900px;
+    height: 300px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    text-align: center;
 }
