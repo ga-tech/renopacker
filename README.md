@@ -23,6 +23,7 @@ the page above includes
 * HTML template `app/views/sandbox/index.html.erb`
 * bundled TypeScript from `app/assets/javascripts/entrypoints/sandbox.ts`
 * bundled SASS from `app/assets/stylesheets/sandbox.scss` 
+* bundled images from `app/assets/images`
 
 # LICENSE
 This software is released under the MIT License, see the license file.

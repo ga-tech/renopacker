@@ -3,16 +3,18 @@
 const APP_DIR = process.env.APP_DIR || "/myapp";
 var src = APP_DIR;
 var dist = APP_DIR + "/public/packs";
+var glob = require("glob");
 
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var ManifestPlugin = require('webpack-manifest-plugin');
 var webpack = require('webpack');
- 
+
 module.exports = {
   context: src,
   entry: {
     "bundlejs": "./app/assets/javascripts/entrypoints/sandbox.ts",
-    "bundlecss": "./app/assets/stylesheets/sandbox.scss"
+    "bundlecss": "./app/assets/stylesheets/sandbox.scss",
+    "images": glob.sync("./app/assets/images/**/*")
   },
   output: {
     path: dist,
@@ -31,6 +33,18 @@ module.exports = {
           'postcss-loader',
           'resolve-url-loader',
           { loader: 'sass-loader', options: { sourceMap: true } }
+        ]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|jpe?g|png|gif|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '../[path][name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
         ]
       }
     ]
