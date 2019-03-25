@@ -12,10 +12,9 @@ var webpack = require('webpack');
 module.exports = {
   context: src,
   entry: {
-    "bundlejs": "./app/assets/javascripts/entrypoints/sandbox.ts",
+    "bundlejs": "./app/assets/javascripts/entrypoints/sandbox.tsx",
     "bundlecss": "./app/assets/stylesheets/sandbox.scss",
-    "images": glob.sync("./app/assets/images/**/*"),
-    "linkButtons": "./app/assets/javascripts/entrypoints/linkButtons",
+    "images": glob.sync("./app/assets/images/**/*")
   },
   output: {
     path: dist,

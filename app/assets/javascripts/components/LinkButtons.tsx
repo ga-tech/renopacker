@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 import SvgIcon from 'material-ui/SvgIcon';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -25,31 +24,38 @@ const styles = {
   label: {
     fontSize: 18,
     verticalAlign: 'middle'
-  },
+  }
 };
 
-const LinkButtons = () => (
-  <MuiThemeProvider>
-    <div>
-      <RaisedButton
-        href="https://github.com/ga-tech/renopacker"
-        target="_blank"
-        label="Github"
-        labelStyle={styles.label}
-        style={styles.button}
-        icon={<GitHubIcon/>}
-      />
-      <RaisedButton
-        href="https://www.ga-tech.co.jp/"
-        target="_blank"
-        label="Website"
-        labelStyle={styles.label}
-        primary={true}
-        style={styles.button}
-        icon={<GAIcon/>}
-      />
-    </div>
-  </MuiThemeProvider>
-);
+class LinkButtons extends React.Component<{},{}> {
+  constructor(props) {
+    super(props)
+  }
+  public render() {
+    return (
+      <MuiThemeProvider>
+      <div>
+        <RaisedButton
+          href="https://github.com/ga-tech/renopacker"
+          target="_blank"
+          label="Github"
+          labelStyle={styles.label}
+          style={styles.button}
+          icon={<GitHubIcon/>}
+        />
+        <RaisedButton
+          href="https://www.ga-tech.co.jp/"
+          target="_blank"
+          label="Website"
+          labelStyle={styles.label}
+          primary={true}
+          style={styles.button}
+          icon={<GAIcon/>}
+        />
+      </div>
+    </MuiThemeProvider>
+    )
+  }
+}
 
-ReactDOM.render(<LinkButtons/>, document.getElementById('link-buttons'));
+export default LinkButtons;
