@@ -39,7 +39,7 @@ class LinkButtons extends React.Component<{},{}> {
         <RaisedButton
           href="https://github.com/ga-tech/renopacker"
           target="_blank"
-          label="Github"
+          label="GitHub"
           labelStyle={styles.label}
           style={styles.button}
           icon={<GitHubIcon/>}
@@ -47,7 +47,7 @@ class LinkButtons extends React.Component<{},{}> {
         <RaisedButton
           href="https://www.ga-tech.co.jp/"
           target="_blank"
-          label="Website"
+          label="WebSite"
           labelStyle={styles.label}
           primary={true}
           style={styles.button}
