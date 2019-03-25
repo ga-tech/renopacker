@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "file-loader": "^3.0.1",
     "material-ui": "^0.20.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
@@ -44,6 +43,7 @@
     "autoprefixer": "^9.4.10",
     "cache-loader": "^2.0.1",
     "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "jest": "^24.1.0",
     "mini-css-extract-plugin": "^0.5.0",
