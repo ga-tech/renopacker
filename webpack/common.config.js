@@ -42,7 +42,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '../[path][name].[ext]',
-              outputPath: 'fonts/'
+              outputPath: 'images/'
             }
           }
         ]
@@ -73,7 +73,7 @@ module.exports = {
           reuseExistingChunk: true
         },
         lib: {
-         test:  /app\/assets\/javascripts\/lib[\\/]/,
+          test:  /app\/assets\/javascripts\/lib[\\/]/,
           name: 'lib',
           chunks: 'all',
           reuseExistingChunk: true
