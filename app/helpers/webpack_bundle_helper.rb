@@ -39,15 +39,6 @@ module WebpackBundleHelper
   private
 
   def manifest
-    if RunningEnv.remote?
-      @manifest ||= JSON.parse(File.read('public/packs/manifest.json'))
-    else
-      conn = Faraday::Connection.new(url: 'http://proxy:3002') do |builder|
-        builder.use Faraday::Adapter::NetHttp
-      end
-
-      res = conn.get '/packs/manifest.json'
-      @manifest ||= JSON.parse(res.body)
-    end
+    WebpackManifest.instance.content
   end
 end

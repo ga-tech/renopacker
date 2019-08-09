@@ -1,0 +1,2 @@
+# webpack-dev-serverを使わない場合には、initializeの際にmanifest.jsonを読みに行く
+WebpackManifest.instance.load_content unless RunningEnv.using_webpack_dev_server?
